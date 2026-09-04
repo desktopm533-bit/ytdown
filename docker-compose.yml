@@ -1,0 +1,22 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: 8080
+      REDIS_URL: redis://queue:6379
+    depends_on:
+      - queue
+  queue:
+    image: valkey/valkey:8-alpine
+    ports:
+      - "6379:6379"
+  worker:
+    build:
+      context: .
+      dockerfile: worker/Dockerfile
+    environment:
+      REDIS_URL: redis://queue:6379
+    depends_on:
+      - queue
