@@ -30,8 +30,8 @@ services:
           name: mediadrop-queue
           property: connectionString
 
-- type: keyvalue
-  name: mediadrop-queue
-  plan: free
-  maxmemoryPolicy: noeviction
-  ipAllowList: []
+  - type: keyvalue
+    name: mediadrop-queue
+    plan: free
+    maxmemoryPolicy: noeviction
+    ipAllowList: []
