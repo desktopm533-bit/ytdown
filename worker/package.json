@@ -1,0 +1,4 @@
+{
+  "name":"mediadrop-worker","private":true,"type":"module","scripts":{"start":"node src/worker.js","dev":"node --watch src/worker.js"},
+  "dependencies":{"bullmq":"^5.34.10","ioredis":"^5.4.1"}
+}
